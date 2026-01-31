@@ -12,7 +12,7 @@ const FoodCard = ({ food }) => {
   } = food;
 
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 hover:shadow-xl transition">
       {/* Food Image */}
       <img
         src={photo}
@@ -44,7 +44,7 @@ const FoodCard = ({ food }) => {
         <div className="flex justify-between items-center pt-3">
           <Link
             to={`/food-details/${_id}`}
-            className="px-4 py-2 text-sm bg-primary text-white rounded-lg hover:bg-primary"
+            className="px-4 py-2 text-sm bg-primary transition text-white rounded-lg hover:bg-primary"
           >
             View Details
           </Link>

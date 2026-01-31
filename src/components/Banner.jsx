@@ -1,12 +1,13 @@
 import { useState } from "react";
 
 const slides = [
-  "https://images.unsplash.com/photo-1550547660-d9450f859349",
+   "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
+  "https://images.unsplash.com/photo-1542826438-bd32f43d626f",
+  "https://images.unsplash.com/photo-1505935428862-770b6f24f629?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZCUyMGJhbm5lcnxlbnwwfHwwfHx8MA%3D%3D",
 //   "https://images.unsplash.com/photo-1548365328-8b849e6c7b38",
 //   "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a",
-  "https://images.unsplash.com/photo-1553621042-f6e147245754",
-  "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
-  "https://images.unsplash.com/photo-1542826438-bd32f43d626f"
+  "https://images.unsplash.com/photo-1670164745517-5b41d4660613?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGZvb2RzfGVufDB8fDB8fHww",
+ 
 ];
 
 const Banner = () => {
