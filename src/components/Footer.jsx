@@ -13,18 +13,18 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Quick Links */}
+       
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="hover:text-white">Home</Link></li>
-            <li><Link to="/all-reviews" className="hover:text-white">All Reviews</Link></li>
-            <li><Link to="/add-review" className="hover:text-white">Add Review</Link></li>
-            <li><Link to="/login" className="hover:text-white">Login</Link></li>
+            <li><Link to="/all-foods" className="hover:text-white">All Reviews</Link></li>
+            <li><Link to="/addFood" className="hover:text-white">Add Review</Link></li>
+            <li><Link to="/auth/login" className="hover:text-white">Login</Link></li>
           </ul>
         </div>
 
-        {/* Contact */}
+       
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
           <p className="text-sm">📍 Dhaka, Bangladesh</p>
@@ -32,7 +32,7 @@ const Footer = () => {
           <p className="text-sm mt-2">📞 +880 1234-567890</p>
         </div>
 
-        {/* Social */}
+        
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
           <div className="flex space-x-4 text-xl">
@@ -45,7 +45,7 @@ const Footer = () => {
 
       </div>
 
-      {/* Bottom */}
+      
       <div className="border-t border-gray-700 py-4 text-center text-sm text-gray-400">
         © {new Date().getFullYear()} FoodReview. All rights reserved.
       </div>

@@ -17,7 +17,7 @@ const MainLayout = () => {
         <Footer/>
       </div>
       <ToastContainer/>
-      {/* <Toaster/> */}
+      
     </div>
         </div>
     );

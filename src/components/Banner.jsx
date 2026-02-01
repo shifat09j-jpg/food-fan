@@ -10,53 +10,30 @@ const slides = [
  
 ];
 
-// const Banner = () => {
-//   const [current, setCurrent] = useState(0);
 
-//   const nextSlide = () => {
-//     setCurrent(current === slides.length - 1 ? 0 : current + 1);
-//   };
-
-//   const prevSlide = () => {
-//     setCurrent(current === 0 ? slides.length - 1 : current - 1);
-//   };
-
-//   return (
-//     <div className="relative w-full h-[400px]">
-//       <img
-//         src={slides[current]}
-//         className="w-full h-full object-cover"
-//       />
-
-//       <button onClick={prevSlide} className="absolute  left-5 top-1/2">⬅</button>
-//       <button onClick={nextSlide} className="absolute right-5 top-1/2">➡</button>
-//     </div>
-//   );
-// };
-
-// export default Banner;
+ 
 
 const Banner = () => {
   const [current, setCurrent] = useState(0);
 
-  // Auto slide effect
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent(prev => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 3000); // 3000ms = 3 seconds
+    }, 3000); 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="relative w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-lg">
-      {/* Slide Image */}
+     
       <img
         src={slides[current]}
         alt="slide"
         className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
       />
 
-      {/* Dots Navigation */}
+     
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex space-x-2">
         {slides.map((_, idx) => (
           <span
