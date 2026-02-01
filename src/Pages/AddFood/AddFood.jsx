@@ -26,7 +26,7 @@ const AddFood = () => {
    
 
     
-    fetch('http://localhost:3000/foods', {
+    fetch('foodfan-server.vercel.app/foods', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

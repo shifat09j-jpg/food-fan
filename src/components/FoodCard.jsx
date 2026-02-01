@@ -7,20 +7,20 @@ const FoodCard = ({ food }) => {
     photo,
     restaurant_name,
     restaurant_location,
-    reviewer_name,
+    reviewer_email,
     rating
   } = food;
 
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-2 hover:shadow-xl transition">
-      {/* Food Image */}
+     
       <img
         src={photo}
         alt={food_name}
         className="w-full h-48 object-cover"
       />
 
-      {/* Card Content */}
+     
       <div className="p-4 space-y-2">
         <h2 className="text-xl font-semibold">{food_name}</h2>
 
@@ -33,14 +33,14 @@ const FoodCard = ({ food }) => {
         </p>
 
         <p className="text-gray-700">
-          Reviewer: <span className="font-medium">{reviewer_name}</span>
+          Reviewer: <span className="font-medium">{reviewer_email}</span>
         </p>
 
         <p className="text-yellow-500 font-semibold">
           ⭐ Rating: {rating}
         </p>
 
-        {/* Buttons */}
+        
         <div className="flex justify-between items-center pt-3">
           <Link
             to={`/food-details/${_id}`}

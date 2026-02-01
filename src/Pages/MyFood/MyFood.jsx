@@ -9,7 +9,7 @@ const MyFood = () => {
 
     useEffect(()=> {
 
-        fetch(`http://localhost:3000/my-foods?email=${user.email}`, {
+        fetch(`https://foodfan-server.vercel.app/my-foods?email=${user.email}`, {
             headers: {
                 authorization: `Bearer ${user.accessToken}`
             }

@@ -1,10 +1,8 @@
 import { Link, NavLink } from "react-router";
-import { IoLogoModelS } from "react-icons/io";
+
 import { GoHomeFill } from "react-icons/go";
 import { IoLogIn, IoLogOut } from "react-icons/io5";
-import { FaGear, FaUser } from "react-icons/fa6";
-import { LuRotate3D } from "react-icons/lu";
-import { ImBoxAdd } from "react-icons/im";
+
 
 import { AuthContext } from "../context/AuthContext";
 import { use } from "react";
@@ -76,11 +74,7 @@ const NavBar = () => {
               <span className="text-primary font-bold text-xl">All Reviews</span>
             </NavLink>
           </li>
-          {/* <li>
-            <NavLink to={"/addFood"}>
-            <span className="text-primary font-bold">Add Review</span>
-            </NavLink>
-          </li> */}
+         
 
         </ul>
       </div>
@@ -106,7 +100,7 @@ const NavBar = () => {
             >
               <div className=" pb-3 border-b border-b-gray-200">
                 <li className="text-sm font-bold">{user.displayName}</li>
-                <li className="text-xs font-semibold">{user.email}</li>
+                <li className="text-xs font-medium">{user.email}</li>
               </div>
              
              <li>
@@ -121,12 +115,7 @@ const NavBar = () => {
                 </Link>
               </li>
 
-              {/* <li >
-                <Link to={"/my-downloads"}>
-                <span className="font-bold"> My Downloads</span>
-                </Link>
-              </li> */}
-
+             
               
               
               

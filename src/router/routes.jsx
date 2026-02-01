@@ -7,7 +7,7 @@ import Profile from "../Pages/Profile/Profile";
 import AddFood from '../Pages/AddFood/AddFood';
 import FoodDetails from "../Pages/FoodDetails/FoodDetails";
 import MyFood from "../Pages/MyFood/MyFood";
-import UpdateFood from "../Pages/UpdateFood/UpdateFood";
+
 import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Register";
 
@@ -21,17 +21,29 @@ export const router = createBrowserRouter ([
           element:<Home/>,
           
         },
+        // {
+          
+        //   path:'/all-foods',
+        //   element:(
+        //     <PrivateRoute>
+        //   <AllFoods/>
+        //   </PrivateRoute>
+        //   ),
+        //   loader: () => fetch('https://foodfan-server.vercel.app/foods')
+          
+        // },
         {
-          
-          path:'/all-foods',
-          element:(
-            <PrivateRoute>
-          <AllFoods/>
-          </PrivateRoute>
-          ),
-          loader: () => fetch('http://localhost:3000/foods')
-          
-        },
+  path:'/all-foods',
+  element: (
+    <PrivateRoute>
+      <AllFoods/>
+    </PrivateRoute>
+  ),
+  loader: async () => {
+    const res = await fetch('https://foodfan-server.vercel.app/foods');
+    return res.json();
+  }
+},
         {
           path:'/profile',
           element:(
@@ -57,9 +69,9 @@ export const router = createBrowserRouter ([
               <FoodDetails/>
             </PrivateRoute>
           ),
-        // loader: ({params}) => fetch(`http://localhost:3000/foods/${params.id}`) 
+        // loader: ({params}) => fetch(`foodfan-server.vercel.app/foods/${params.id}`) 
         loader: async ({ params }) => {
-        const res = await fetch(`http://localhost:3000/foods/${params.id}`);
+        const res = await fetch(`https://foodfan-server.vercel.app/foods/${params.id}`);
         return res.json();
         }
 
@@ -73,15 +85,7 @@ export const router = createBrowserRouter ([
           )
           
         },
-        {
-          path:'/update-food/:id',
-          element:(
-            <PrivateRoute>
-              <UpdateFood/>
-            </PrivateRoute>
-          )
-          
-        },
+       
         {
           path:'/auth/login',
           element: <Login></Login>
