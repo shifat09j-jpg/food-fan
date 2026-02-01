@@ -22,8 +22,13 @@ export const router = createBrowserRouter ([
           
         },
         {
+          
           path:'/all-foods',
-          element:<AllFoods/>,
+          element:(
+            <PrivateRoute>
+          <AllFoods/>
+          </PrivateRoute>
+          ),
           loader: () => fetch('http://localhost:3000/foods')
           
         },
@@ -52,7 +57,12 @@ export const router = createBrowserRouter ([
               <FoodDetails/>
             </PrivateRoute>
           ),
-        loader: ({params}) => fetch(`http://localhost:3000/foods/${params.id}`) 
+        // loader: ({params}) => fetch(`http://localhost:3000/foods/${params.id}`) 
+        loader: async ({ params }) => {
+        const res = await fetch(`http://localhost:3000/foods/${params.id}`);
+        return res.json();
+        }
+
         },
         {
           path:'/my-foods',

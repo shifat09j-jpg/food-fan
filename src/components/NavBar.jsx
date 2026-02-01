@@ -16,7 +16,7 @@ const NavBar = () => {
 
  
   return (
-    <div className="navbar py-0 min-h-0 z-1 shadow-sm rounded-full glass-card max-w-7xl">
+    <div className="navbar py-0 min-h-0 z-1 shadow-sm  glass-card max-w-7xl">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
@@ -46,11 +46,17 @@ const NavBar = () => {
                 Home
               </NavLink>
             </li>
-            <li>
-              <NavLink to={"/all-models"}>
-                <IoLogoModelS /> All Models
-              </NavLink>
-            </li>
+              <li>
+            <NavLink to={"/all-foods"}>
+              <span className="text-primary font-bold">All Reviews</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/addFood"}>
+            <span className="text-primary font-bold">Add Review</span>
+            </NavLink>
+          </li>
+           
           </ul>
         </div>
         <Link to={"/"} className="flex items-center gap-1 text-3xl font-bold">
@@ -62,19 +68,19 @@ const NavBar = () => {
           <li>
             <NavLink to={"/"}>
               <GoHomeFill />
-              <span className="text-primary font-bold">Home</span>
+              <span className="text-primary font-bold text-xl">Home</span>
             </NavLink>
           </li>
           <li>
             <NavLink to={"/all-foods"}>
-              <span className="text-primary font-bold">All Reviews</span>
+              <span className="text-primary font-bold text-xl">All Reviews</span>
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to={"/addFood"}>
             <span className="text-primary font-bold">Add Review</span>
             </NavLink>
-          </li>
+          </li> */}
 
         </ul>
       </div>
@@ -100,21 +106,26 @@ const NavBar = () => {
             >
               <div className=" pb-3 border-b border-b-gray-200">
                 <li className="text-sm font-bold">{user.displayName}</li>
-                <li className="text-xs">{user.email}</li>
+                <li className="text-xs font-semibold">{user.email}</li>
               </div>
              
+             <li>
+            <NavLink to={"/addFood"}>
+            <span className="text-primary font-bold">Add Review</span>
+            </NavLink>
+          </li>
 
               <li>
                 <Link to={"/my-foods"}>
-                  <span className="font-bold"> My Review</span>
+                  <span className="font-bold text-primary"> My Review</span>
                 </Link>
               </li>
 
-              <li >
+              {/* <li >
                 <Link to={"/my-downloads"}>
                 <span className="font-bold"> My Downloads</span>
                 </Link>
-              </li>
+              </li> */}
 
               
               

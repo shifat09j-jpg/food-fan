@@ -1,7 +1,8 @@
 import { useContext } from "react";
 
-import toast from "react-hot-toast";
+
 import { AuthContext } from "../../context/AuthContext";
+import { toast } from "react-toastify";
 
 const AddFood = () => {
   const { user } = useContext(AuthContext);
@@ -22,23 +23,25 @@ const AddFood = () => {
     //   date: new Date()
     };
 
-    fetch("http://localhost:3000/foods", {
+   
+
+    
+    fetch('http://localhost:3000/foods', {
       method: "POST",
       headers: {
-        "content-type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(newReview)
     })
-      .then(res => res.json())
-      .then(data => {
-        if (data.insertedId) {
-          toast.success("Food review added successfully!");
-          form.reset();
-        }
-      })
-      .catch(() => {
-        toast.error("Failed to add review");
-      });
+    .then(res => res.json())
+    .then(data=> {
+      toast.success("Successfully added!")
+      console.log(data)
+      form.reset();
+    })
+    .catch(err => {
+      console.log(err)
+    })
   };
 
   return (
@@ -57,7 +60,7 @@ const AddFood = () => {
             name="food_name"
             required
             className="w-full mt-2 p-3 border rounded-lg"
-            placeholder="Cheese Burger"
+            placeholder="Items Name"
           />
         </div>
 
@@ -81,7 +84,7 @@ const AddFood = () => {
             name="restaurant_name"
             required
             className="w-full mt-2 p-3 border rounded-lg"
-            placeholder="Burger Hub"
+            placeholder="Restaurant Name"
           />
         </div>
 
@@ -93,7 +96,7 @@ const AddFood = () => {
             name="location"
             required
             className="w-full mt-2 p-3 border rounded-lg"
-            placeholder="Dhanmondi, Dhaka"
+            placeholder="Gulistan, Dhaka"
           />
         </div>
 

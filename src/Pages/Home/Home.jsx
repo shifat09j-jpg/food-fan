@@ -21,7 +21,7 @@ const Home = () => {
           Featured Reviews
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {topRatedfoods.map(food => (
             <FoodCard key={food._id} food={food} />
           ))}
